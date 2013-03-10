@@ -22,11 +22,13 @@ public final class R {
     }
     public static final class drawable {
         public static final int aclimb_ico=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int icon_escoles_tab=0x7f020002;
-        public static final int icon_vies_tab=0x7f020003;
-        public static final int vies=0x7f020004;
-        public static final int vies_inv=0x7f020005;
+        public static final int escoles_map1=0x7f020001;
+        public static final int escoles_map1_inv=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int icon_escoles_tab=0x7f020004;
+        public static final int icon_vies_tab=0x7f020005;
+        public static final int vies=0x7f020006;
+        public static final int vies_inv=0x7f020007;
     }
     public static final class id {
         public static final int TabEscoles=0x7f080001;

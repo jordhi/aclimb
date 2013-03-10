@@ -1,61 +1,76 @@
 package cat.jordihernandez.aclimb;
 
-import android.app.Activity;
-import android.app.LocalActivityManager;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.Menu;
+import android.support.v4.app.FragmentActivity;
 import android.widget.TabHost;
-
-public class MainActivity extends Activity {
-	
-	private TabHost mHost;
-    LocalActivityManager lam;
-    
+ 
+public class MainActivity extends FragmentActivity {
+    TabHost tHost;
+ 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        Resources res = getResources(); // Resource object to get Drawables
-        TabHost.TabSpec spec;  // Resusable TabSpec for each tab
-                
-        mHost = (TabHost) findViewById(android.R.id.tabhost);
-        
-        
-        lam = new LocalActivityManager(MainActivity.this, false);
-        lam.dispatchCreate(savedInstanceState);
  
-        mHost.setup(lam);
-        
-        Intent intent1 = new Intent(this, vies.class);
-        spec = mHost.newTabSpec("vies").setIndicator("", res.getDrawable(R.drawable.icon_vies_tab)).setContent(intent1);
-        mHost.addTab(spec);
-        
-        
-        Intent intent2 = new Intent(this, escoles.class);
-        spec = mHost.newTabSpec("escoles").setIndicator("",res.getDrawable(R.drawable.icon_escoles_tab)).setContent(intent2);
-        mHost.addTab(spec);
-        
-        mHost.setCurrentTab(0);
+        tHost = (TabHost) findViewById(android.R.id.tabhost);
+        tHost.setup();
+ 
+        /** Defining Tab Change Listener event. This is invoked when tab is changed */
+        TabHost.OnTabChangeListener tabChangeListener = new TabHost.OnTabChangeListener() {
+ 
+            @Override
+            public void onTabChanged(String tabId) {
+                android.support.v4.app.FragmentManager fm =   getSupportFragmentManager();
+                vies _vies = (vies) fm.findFragmentByTag("vies");
+                escoles _escoles = (escoles) fm.findFragmentByTag("escoles");
+                android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
+ 
+                /** Detaches the fragment vies if exists */
+                if(_vies!=null)
+                    ft.detach(_vies);
+ 
+                /** Detaches the fragment escoles if exists */
+                if(_escoles!=null)
+                    ft.detach(_escoles);
+ 
+                /** If current tab is vies */
+                if(tabId.equalsIgnoreCase("vies")){
+ 
+                    if(_vies==null){
+                        /** Create vies and adding to fragmenttransaction */
+                        ft.add(R.id.tabVies,new vies(), "vies");
+                    }else{
+                        /** Bring to the front, if already exists in the fragmenttransaction */
+                        ft.attach(_vies);
+                    }
+ 
+                }else{    /** If current tab is apple */
+                    if(_escoles==null){
+                        /** Create escoles and adding to fragmenttransaction */
+                        ft.add(R.id.TabEscoles,new escoles(), "escoles");
+                     }else{
+                        /** Bring to the front, if already exists in the fragmenttransaction */
+                        ft.attach(_escoles);
+                    }
+                }
+                ft.commit();
+            }
+        };
+ 
+        /** Setting tabchangelistener for the tab */
+        tHost.setOnTabChangedListener(tabChangeListener);
+ 
+        /** Defining tab builder for Andriod tab */
+        TabHost.TabSpec tSpecVies = tHost.newTabSpec("vies");
+        tSpecVies.setIndicator("Vies",getResources().getDrawable(R.drawable.icon_vies_tab));
+        tSpecVies.setContent(new ContingutsTabHost(getBaseContext()));
+        tHost.addTab(tSpecVies);
+ 
+        /** Defining tab builder for Apple tab */
+        TabHost.TabSpec tSpecEscoles = tHost.newTabSpec("escoles");
+        tSpecEscoles.setIndicator("Escoles",getResources().getDrawable(R.drawable.icon_escoles_tab));
+        tSpecEscoles.setContent(new ContingutsTabHost(getBaseContext()));
+        tHost.addTab(tSpecEscoles);
+ 
     }
-
-    @Override
-    protected void onPause() {
-       lam.dispatchPause(isFinishing());
-       super.onPause();
-    }
-    @Override
-    protected void onResume() {
-        lam.dispatchResume();
-        super.onResume();
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-    
 }
