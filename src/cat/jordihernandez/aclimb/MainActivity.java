@@ -1,5 +1,6 @@
 package cat.jordihernandez.aclimb;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.TabHost;
@@ -12,6 +13,9 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
  
+        aClimbDBHelper mDbHelper = new aClimbDBHelper(getBaseContext());
+        SQLiteDatabase dbC = mDbHelper.getWritableDatabase();
+
         tHost = (TabHost) findViewById(android.R.id.tabhost);
         tHost.setup();
  
