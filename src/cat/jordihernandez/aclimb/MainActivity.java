@@ -15,7 +15,8 @@ public class MainActivity extends FragmentActivity {
  
         aClimbDBHelper mDbHelper = new aClimbDBHelper(getBaseContext());
         SQLiteDatabase dbC = mDbHelper.getWritableDatabase();
-
+        dbC.close();
+        
         tHost = (TabHost) findViewById(android.R.id.tabhost);
         tHost.setup();
  
