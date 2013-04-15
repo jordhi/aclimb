@@ -4,6 +4,7 @@ public class item_vies {
 	
 	 protected String NomVia;
 	 protected String Grau;
+	 protected int idvia;
 	 
 
 	public item_vies() {
@@ -11,9 +12,18 @@ public class item_vies {
 		this.Grau="";
 		this.NomVia="";
 	}
+	
 	public item_vies(String nom, String grau) {
 		this.Grau=grau;
 		this.NomVia=nom;
+	}
+	
+	public void setId(int id) {
+		idvia = id;
+	}
+	
+	public int getId() {
+		return idvia;
 	}
 	
 	public String getNomVia() {

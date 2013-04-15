@@ -2,7 +2,8 @@
 <resources>
 
     <string name="app_name">aClimb</string>
-    <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-
+    <string name="action_settings">Preferències</string>
+    <string name="inserir_item">Inserir</string>
+	<string name="esborrar_item">Esborrar</string>
+	<string name="editar_item">Editar</string>
 </resources>

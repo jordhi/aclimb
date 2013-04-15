@@ -15,13 +15,17 @@ public class vies extends ListFragment {
 
 	/** An array of items to display in ArrayList */
     ArrayList<item_vies> llista_vies = new ArrayList<item_vies>();
+    private manipularDadesVies dadesVies;
     
  
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
  
         /** Creating array adapter to set data in listview */
-       	ArrayList<item_vies> llista_vies = obtenirItems();
+       //	ArrayList<item_vies> llista_vies = obtenirItems();
+    	dadesVies = new manipularDadesVies(this.getActivity());
+    	dadesVies.obrir();
+    	ArrayList<item_vies> llista_vies = dadesVies.getAllVies();
     	itemViesAdapter adapter = new itemViesAdapter(this.getActivity(), llista_vies);
         
     	/** Setting the array adapter to the listview */
@@ -44,7 +48,7 @@ public class vies extends ListFragment {
         super.onStart();
  
         /** Setting the multiselect choice mode for the listview */
-        getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        //getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
     }
 	
 

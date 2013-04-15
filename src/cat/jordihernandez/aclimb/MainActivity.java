@@ -1,8 +1,10 @@
 package cat.jordihernandez.aclimb;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TabHost;
  
 public class MainActivity extends FragmentActivity {
@@ -13,9 +15,9 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
  
-        aClimbDBHelper mDbHelper = new aClimbDBHelper(getBaseContext());
-        SQLiteDatabase dbC = mDbHelper.getWritableDatabase();
-        dbC.close();
+       // aClimbDBHelper mDbHelper = new aClimbDBHelper(getBaseContext());
+       // SQLiteDatabase dbC = mDbHelper.getWritableDatabase();
+       // dbC.close();
         
         tHost = (TabHost) findViewById(android.R.id.tabhost);
         tHost.setup();
@@ -78,4 +80,28 @@ public class MainActivity extends FragmentActivity {
         tHost.addTab(tSpecEscoles);
  
     }
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.main, menu);
+	    return true;
+		//return super.onCreateOptionsMenu(menu);
+		
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		manipularDadesVies dvies = new manipularDadesVies(this);
+		dvies.obrir();
+		//dades a inserir
+		item_vies via_nova = new item_vies("Via1","grau1");
+		dvies.inserirVia(via_nova);
+		dvies.tancar();
+		return super.onOptionsItemSelected(item);
+	}
+    
+    
 }
