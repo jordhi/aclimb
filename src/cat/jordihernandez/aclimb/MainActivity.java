@@ -6,8 +6,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TabHost;
+import android.widget.Toast;
  
+/*** Activity principal fragmentada amb Tabs ***/
 public class MainActivity extends FragmentActivity {
+	
     TabHost tHost;
  
     @Override
@@ -15,10 +18,6 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
  
-       // aClimbDBHelper mDbHelper = new aClimbDBHelper(getBaseContext());
-       // SQLiteDatabase dbC = mDbHelper.getWritableDatabase();
-       // dbC.close();
-        
         tHost = (TabHost) findViewById(android.R.id.tabhost);
         tHost.setup();
  
@@ -67,13 +66,13 @@ public class MainActivity extends FragmentActivity {
         /** Setting tabchangelistener for the tab */
         tHost.setOnTabChangedListener(tabChangeListener);
  
-        /** Defining tab builder for Andriod tab */
+        /** Defining tab builder for Vies tab */
         TabHost.TabSpec tSpecVies = tHost.newTabSpec("vies");
         tSpecVies.setIndicator("Vies",getResources().getDrawable(R.drawable.icon_vies_tab));
         tSpecVies.setContent(new ContingutsTabHost(getBaseContext()));
         tHost.addTab(tSpecVies);
  
-        /** Defining tab builder for Apple tab */
+        /** Defining tab builder for Escoles tab */
         TabHost.TabSpec tSpecEscoles = tHost.newTabSpec("escoles");
         tSpecEscoles.setIndicator("Escoles",getResources().getDrawable(R.drawable.icon_escoles_tab));
         tSpecEscoles.setContent(new ContingutsTabHost(getBaseContext()));
@@ -81,6 +80,7 @@ public class MainActivity extends FragmentActivity {
  
     }
 
+    /** Menu que es comú a tots els tabs **/
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
@@ -94,11 +94,23 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
+		Toast toast = new Toast(this);
+		
 		manipularDadesVies dvies = new manipularDadesVies(this);
 		dvies.obrir();
 		//dades a inserir
-		item_vies via_nova = new item_vies("Via1","grau1");
-		dvies.inserirVia(via_nova);
+		item_vies via_nova = new item_vies("Via2","7a");
+		
+		switch (item.getItemId()) {
+			case R.id.inserir_item:
+				dvies.inserirVia(via_nova);break;
+			case R.id.esborrar_item:
+				toast.makeText(this, "esborrar", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.action_settings:
+				toast.makeText(this, "Preferències", Toast.LENGTH_SHORT).show();
+		}
+				
 		dvies.tancar();
 		return super.onOptionsItemSelected(item);
 	}

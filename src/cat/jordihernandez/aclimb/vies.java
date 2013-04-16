@@ -8,7 +8,6 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 //AndroidFragment
 public class vies extends ListFragment {
@@ -22,14 +21,17 @@ public class vies extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
  
         /** Creating array adapter to set data in listview */
-       //	ArrayList<item_vies> llista_vies = obtenirItems();
-    	dadesVies = new manipularDadesVies(this.getActivity());
+        dadesVies = new manipularDadesVies(this.getActivity());
     	dadesVies.obrir();
     	ArrayList<item_vies> llista_vies = dadesVies.getAllVies();
     	itemViesAdapter adapter = new itemViesAdapter(this.getActivity(), llista_vies);
         
     	/** Setting the array adapter to the listview */
         setListAdapter(adapter);
+        
+        //tanquem la bbdd
+        dadesVies.tancar();
+        
         return super.onCreateView(inflater, container, savedInstanceState);
        
     }

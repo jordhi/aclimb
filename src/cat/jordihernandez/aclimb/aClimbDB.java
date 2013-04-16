@@ -28,7 +28,7 @@ public class aClimbDB {
 	public static abstract class T_Vies implements BaseColumns {
 		public static final String TABLE_NAME = "vies";
 		public static final String COLUMN_NAME_ID = "id_via";
-		public static final String COLUMN_NAME_NOM_VIA = "nom_escola";
+		public static final String COLUMN_NAME_NOM_VIA = "nom_via";
 		public static final String COLUMN_TIPUS = "tipus";
 		public static final String COLUMN_DATA_CREACIO = "data_creacio";
 		public static final String COLUMN_GRAU_ESP = "grau_esp";

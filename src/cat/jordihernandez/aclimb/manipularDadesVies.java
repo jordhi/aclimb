@@ -33,18 +33,18 @@ public class manipularDadesVies {
 	
 	public void inserirVia(item_vies via_nova) {
 		    ContentValues values = new ContentValues();
-		    values.put(aClimbDB.T_Vies.COLUMN_NAME_ID, via_nova.getId());
+		    //values.put(aClimbDB.T_Vies.COLUMN_NAME_ID, via_nova.getId());
 		    values.put(aClimbDB.T_Vies.COLUMN_NAME_NOM_VIA, via_nova.getNomVia());
 		    values.put(aClimbDB.T_Vies.COLUMN_GRAU_ESP, via_nova.getGrau());
 		    long insertId = bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null,
 		        values);
 		   /* Cursor cursor = bdClimb.query(aClimbDB.T_Vies.TABLE_NAME,
-		        allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
+		        null, aClimbDB.T_Vies.COLUMN_NAME_ID + " = " + insertId, null,
 		        null, null, null);
 		    cursor.moveToFirst();
-		    Comment newComment = cursorToComment(cursor);
+		    item_vies viaNova = cursorToVies(cursor);
 		    cursor.close();
-		    return newComment;*/
+		    return viaNova;*/
 		  }
 	
 	public ArrayList<item_vies> getAllVies() {
