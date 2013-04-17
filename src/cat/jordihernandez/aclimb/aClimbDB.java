@@ -39,6 +39,7 @@ public class aClimbDB {
 		public static final String COLUMN_DESCENS = "descens";
 		public static final String COLUMN_SECTOR = "sector";
 		public static final String COLUMN_ESCOLA = "escola";
+		public static final String COLUMN_QUALITAT = "qualitat";
     }
 	
 	// Taula de LLargs		

@@ -24,6 +24,7 @@
         </activity>
         <activity android:name="cat.jordihernandez.aclimb.vies" />
         <activity android:name="cat.jordihernandez.aclimb.escoles" />
+        <activity android:name="cat.jordihernandez.aclimb.formulariVies" />
     
     </application>
 

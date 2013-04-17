@@ -30,6 +30,7 @@ public class aClimbDBHelper extends SQLiteOpenHelper {
 			aClimbDB.T_Vies.COLUMN_TOPROPE + " BOOL," + 
 			aClimbDB.T_Vies.COLUMN_ORIENTACIO + " VARCHAR," +
 			aClimbDB.T_Vies.COLUMN_DESCENS + " VARCHAR," +
+			aClimbDB.T_Vies.COLUMN_QUALITAT + " INTEGER," +
 			aClimbDB.T_Vies.COLUMN_SECTOR + " INTEGER REFERENCES " +
 				aClimbDB.T_Sectors.TABLE_NAME + "(" + aClimbDB.T_Sectors.COLUMN_NAME_ID + "), " + 
 			aClimbDB.T_Vies.COLUMN_ESCOLA + " INTEGER REFERENCES " + 

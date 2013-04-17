@@ -1,5 +1,6 @@
 package cat.jordihernandez.aclimb;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
@@ -96,14 +97,14 @@ public class MainActivity extends FragmentActivity {
 		// TODO Auto-generated method stub
 		Toast toast = new Toast(this);
 		
-		manipularDadesVies dvies = new manipularDadesVies(this);
-		dvies.obrir();
-		//dades a inserir
-		item_vies via_nova = new item_vies("Via2","7a");
+		
+		
 		
 		switch (item.getItemId()) {
 			case R.id.inserir_item:
-				dvies.inserirVia(via_nova);break;
+				Intent i = new Intent(this, formulariVies.class );
+		        startActivity(i);
+				break;
 			case R.id.esborrar_item:
 				toast.makeText(this, "esborrar", Toast.LENGTH_SHORT).show();
 				break;
@@ -111,7 +112,7 @@ public class MainActivity extends FragmentActivity {
 				toast.makeText(this, "Preferències", Toast.LENGTH_SHORT).show();
 		}
 				
-		dvies.tancar();
+		
 		return super.onOptionsItemSelected(item);
 	}
     
