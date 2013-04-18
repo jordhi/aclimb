@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class itemViesAdapter extends BaseAdapter {
@@ -59,7 +60,10 @@ public class itemViesAdapter extends BaseAdapter {
 	         
 	    TextView tipo = (TextView) vi.findViewById(R.id.text2);
 	    tipo.setText(item.getGrau());
-	 
+	    
+	    RatingBar rating = (RatingBar) vi.findViewById(R.id.lblRatQualitat);
+	    rating.setRating((float)item.getRating());
+	    
 	    return vi;
 	}
 

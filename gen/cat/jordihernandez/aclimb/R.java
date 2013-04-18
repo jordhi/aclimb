@@ -22,23 +22,29 @@ public final class R {
     }
     public static final class drawable {
         public static final int aclimb_ico=0x7f020000;
-        public static final int escoles_map1=0x7f020001;
-        public static final int escoles_map1_inv=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int icon_escoles_tab=0x7f020004;
-        public static final int icon_vies_tab=0x7f020005;
-        public static final int vies=0x7f020006;
-        public static final int vies_inv=0x7f020007;
+        public static final int custom_ratingbar=0x7f020001;
+        public static final int custom_ratingbar_empty=0x7f020002;
+        public static final int custom_ratingbar_filled=0x7f020003;
+        public static final int escoles_map1=0x7f020004;
+        public static final int escoles_map1_inv=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int icon_escoles_tab=0x7f020007;
+        public static final int icon_vies_tab=0x7f020008;
+        public static final int star_off=0x7f020009;
+        public static final int star_on=0x7f02000a;
+        public static final int vies=0x7f02000b;
+        public static final int vies_inv=0x7f02000c;
     }
     public static final class id {
         public static final int TabEscoles=0x7f080001;
-        public static final int action_settings=0x7f08000b;
+        public static final int action_settings=0x7f08000c;
         public static final int btnInserir=0x7f080008;
-        public static final int esborrar_item=0x7f08000d;
+        public static final int esborrar_item=0x7f08000e;
         public static final int imageView1=0x7f080002;
-        public static final int inserir_item=0x7f08000c;
+        public static final int inserir_item=0x7f08000d;
         public static final int lblGrau=0x7f080005;
         public static final int lblNovaVia=0x7f080003;
+        public static final int lblRatQualitat=0x7f08000b;
         public static final int ratQualitat=0x7f080007;
         public static final int tabVies=0x7f080000;
         public static final int text1=0x7f080009;
@@ -88,5 +94,6 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+        public static final int RatingBarPetit=0x7f060002;
     }
 }

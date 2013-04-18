@@ -46,12 +46,12 @@
 
     <RatingBar
         android:id="@+id/ratQualitat"
+        style="@style/RatingBarPetit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:layout_marginBottom="10dp"
         android:max="5"
-        android:minHeight="50dp"
-        android:minWidth="40dp"
         android:numStars="5"
         android:stepSize="1"
         android:textAlignment="center" />
@@ -60,7 +60,7 @@
         android:id="@+id/btnInserir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inserir"
-        android:onClick="InserirDades" />
+        android:onClick="InserirDades"
+        android:text="Inserir" />
 
 </LinearLayout>

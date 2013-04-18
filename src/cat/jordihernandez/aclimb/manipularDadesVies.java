@@ -36,6 +36,8 @@ public class manipularDadesVies {
 		    //values.put(aClimbDB.T_Vies.COLUMN_NAME_ID, via_nova.getId());
 		    values.put(aClimbDB.T_Vies.COLUMN_NAME_NOM_VIA, via_nova.getNomVia());
 		    values.put(aClimbDB.T_Vies.COLUMN_GRAU_ESP, via_nova.getGrau());
+		    values.put(aClimbDB.T_Vies.COLUMN_QUALITAT, via_nova.getRating());
+		    
 		    long insertId = bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null,
 		        values);
 		   /* Cursor cursor = bdClimb.query(aClimbDB.T_Vies.TABLE_NAME,
@@ -69,6 +71,7 @@ public class manipularDadesVies {
 		    via.setId(cursor.getInt(0));
 		    via.setNomVia(cursor.getString(1));
 		    via.setGrau(cursor.getString(4));
+		    via.setRating(cursor.getInt(9));
 		    return via;
 		  }
 

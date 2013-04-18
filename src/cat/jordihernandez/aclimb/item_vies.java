@@ -5,17 +5,20 @@ public class item_vies {
 	 protected String NomVia;
 	 protected String Grau;
 	 protected int idvia;
+	 protected int Rating;
 	 
 
 	public item_vies() {
 		// TODO Auto-generated constructor stub
 		this.Grau="";
 		this.NomVia="";
+		this.Rating=0;
 	}
 	
-	public item_vies(String nom, String grau) {
+	public item_vies(String nom, String grau, int rat) {
 		this.Grau=grau;
 		this.NomVia=nom;
+		this.Rating=rat;
 	}
 	
 	public void setId(int id) {
@@ -40,6 +43,14 @@ public class item_vies {
 	
 	public void setGrau(String grau) {
 		this.Grau = grau;
+	}		
+	
+	public int getRating() {
+		return Rating;
+	}
+	
+	public void setRating(int rat) {
+		this.Rating = rat;
 	}		 
 		     
 }

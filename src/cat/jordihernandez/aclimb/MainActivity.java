@@ -96,8 +96,7 @@ public class MainActivity extends FragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		Toast toast = new Toast(this);
-			
-		
+				
 		switch (item.getItemId()) {
 			case R.id.inserir_item:
 				Intent i = new Intent(this, formulariVies.class );
@@ -109,8 +108,7 @@ public class MainActivity extends FragmentActivity {
 			case R.id.action_settings:
 				toast.makeText(this, "Preferències", Toast.LENGTH_SHORT).show();
 		}
-				
-		
+			
 		return super.onOptionsItemSelected(item);
 	}
     
