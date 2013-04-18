@@ -1,11 +1,9 @@
 package cat.jordihernandez.aclimb;
 
-import cat.jordihernandez.aclimb.R.layout;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class formulariVies extends Activity {
 
@@ -28,6 +26,8 @@ public class formulariVies extends Activity {
 		// Inserir a la base de dades i tancar
 		dvies.inserirVia(via_nova);
 		dvies.tancar();
+		
+		finish();
 		
 	}
 

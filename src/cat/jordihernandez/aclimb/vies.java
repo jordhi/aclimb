@@ -20,7 +20,14 @@ public class vies extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
  
-        /** Creating array adapter to set data in listview */
+            
+        return super.onCreateView(inflater, container, savedInstanceState);
+       
+    }
+
+    public void ObtenirLlistaVies() {
+    	
+    	 /** Creating array adapter to set data in listview */
         dadesVies = new manipularDadesVies(this.getActivity());
     	dadesVies.obrir();
     	ArrayList<item_vies> llista_vies = dadesVies.getAllVies();
@@ -31,27 +38,17 @@ public class vies extends ListFragment {
         
         //tanquem la bbdd
         dadesVies.tancar();
-        
-        return super.onCreateView(inflater, container, savedInstanceState);
-       
     }
+
+	@Override
+	public void onResume() {
+		// TODO Auto-generated method stub
+		ObtenirLlistaVies();
+		super.onResume();
+	}
     
-    private ArrayList<item_vies> obtenirItems() {
-        ArrayList<item_vies> items = new ArrayList<item_vies>();
-             
-        items.add(new item_vies("Crit de pànic", "7a"));
-        items.add(new item_vies("Miembrillo", "6c+"));
-        items.add(new item_vies("Wanted", "7a+"));
-             
-        return items;
-      }
-    @Override
-    public void onStart() {
-        super.onStart();
- 
-        /** Setting the multiselect choice mode for the listview */
-        //getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-    }
+   
+   
 	
 
 }

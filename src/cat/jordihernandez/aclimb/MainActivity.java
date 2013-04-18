@@ -96,9 +96,7 @@ public class MainActivity extends FragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		Toast toast = new Toast(this);
-		
-		
-		
+			
 		
 		switch (item.getItemId()) {
 			case R.id.inserir_item:
