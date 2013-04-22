@@ -2,7 +2,7 @@ package cat.jordihernandez.aclimb;
 
 public class item_vies {
 	
-	 protected String NomVia;
+	 protected String NomVia,Tipus,Orientacio;
 	 protected String Grau;
 	 protected int idvia;
 	 protected int Rating;
@@ -48,9 +48,25 @@ public class item_vies {
 	public int getRating() {
 		return Rating;
 	}
-	
+
 	public void setRating(int rat) {
 		this.Rating = rat;
+	}
+	
+	public String getTipus() {
+		return Tipus;
+	}
+	
+	public void setTipus(String tip) {
+		this.Tipus = tip;
+	}		 
+	
+	public String getOrientacio() {
+		return Orientacio;
+	}
+	
+	public void setOrientacio(String ori) {
+		this.Orientacio = ori;
 	}		 
 		     
 }
