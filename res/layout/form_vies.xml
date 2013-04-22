@@ -14,7 +14,7 @@
         android:id="@+id/lblNovaVia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#aa99bb"
+        android:background="#7799dd"
         android:gravity="center|left"
         android:padding="5dp"
         android:text="Nom via"
@@ -26,40 +26,120 @@
         android:layout_height="wrap_content"
         android:ems="10" >
     </EditText>
-    
-    <TextView
-        android:id="@+id/lblGrau"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#aa99bb"
-        android:gravity="center|left"
-        android:padding="5dp"
-        android:text="Grau"
-        android:textSize="15sp" />
-    
-    <EditText
-        android:id="@+id/txtGrau"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" >
-    </EditText>
+	<RadioGroup
+  	   android:id="@+id/rgrpEspClas"
+	   android:layout_width="match_parent"
+ 	   android:layout_height="wrap_content"
+ 	   android:orientation="horizontal" >
 
-    <RatingBar
-        android:id="@+id/ratQualitat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:max="5"
-        android:numStars="5"
-        android:stepSize="1"
-        android:textAlignment="center" />
+	    <RadioButton
+    	    android:id="@+id/radio0"
+ 	        android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_weight="1"
+        	android:checked="true"
+        	android:text="Esportiva" />
+	    <RadioButton
+    	    android:id="@+id/radio1"
+       		android:layout_width="match_parent"
+       		android:layout_height="wrap_content"
+        	android:layout_weight="1"
+        	android:text="Clàssica" />
+</RadioGroup>
 
-    <Button
-        android:id="@+id/btnInserir"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="InserirDades"
-        android:text="Inserir" />
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+
+		<TextView
+		    android:id="@+id/lblGrau"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1.1"
+		    android:background="#7799dd"
+		    android:gravity="center|left"
+		    android:padding="5dp"
+		    android:text="Grau"
+		    android:textSize="15sp" />
+
+		<EditText
+		    android:id="@+id/txtGrau"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1.1"
+		    android:ems="10"
+		    android:nextFocusLeft="@id/txtNomVia" >
+
+		    <requestFocus />
+		</EditText>
+
+		<TextView
+		    android:id="@+id/lblTipus"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1.1"
+		    android:background="#7799dd"
+		    android:gravity="center|left"
+		    android:padding="5dp"
+		    android:text="Tipus"
+		    android:textSize="15sp" />
+
+		<EditText
+		    android:id="@+id/txtTipus"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.7"
+		    android:ems="10" />
+
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+
+		<Spinner
+		    android:id="@+id/cmbOrientacio"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="10dp"
+		    android:layout_weight="1"
+		    android:entries="@array/array_orientacio"
+		    android:gravity="center"
+		    android:textAlignment="center" />
+
+		<RatingBar
+		    android:id="@+id/ratQualitat"
+		    style="@style/RatingBarPetit"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_marginRight="10dp"
+		    android:layout_weight="1.7"
+		    android:max="5"
+		    android:numStars="5"
+		    android:stepSize="1"
+		    android:textAlignment="center" />
+
+	</LinearLayout>
+
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+
+		<Button
+		    android:id="@+id/btnInserir"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:onClick="InserirDades"
+		    android:text="Inserir" />
+
+		<Button
+		    android:id="@+id/btCancel"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="Cancel·lar" />
+
+	</LinearLayout>
 
 </LinearLayout>

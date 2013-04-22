@@ -38,8 +38,8 @@ public class manipularDadesVies {
 		    values.put(aClimbDB.T_Vies.COLUMN_GRAU_ESP, via_nova.getGrau());
 		    values.put(aClimbDB.T_Vies.COLUMN_QUALITAT, via_nova.getRating());
 		    
-		    long insertId = bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null,
-		        values);
+		    //long insertId = bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null,values);
+		    bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null, values);
 		   /* Cursor cursor = bdClimb.query(aClimbDB.T_Vies.TABLE_NAME,
 		        null, aClimbDB.T_Vies.COLUMN_NAME_ID + " = " + insertId, null,
 		        null, null, null);
@@ -48,6 +48,11 @@ public class manipularDadesVies {
 		    cursor.close();
 		    return viaNova;*/
 		  }
+	
+	public void EsborrarVia (int id) {
+		System.out.println("Via amb id: " + id + " esborrada");
+		bdClimb.delete(aClimbDB.T_Vies.TABLE_NAME, aClimbDB.T_Vies.COLUMN_NAME_ID + "=" + id, null);
+	}
 	
 	public ArrayList<item_vies> getAllVies() {
 	    ArrayList<item_vies> vies = new ArrayList<item_vies>();
@@ -73,6 +78,6 @@ public class manipularDadesVies {
 		    via.setGrau(cursor.getString(4));
 		    via.setRating(cursor.getInt(9));
 		    return via;
-		  }
+	}
 
 }
