@@ -55,7 +55,7 @@
 		    android:id="@+id/lblGrau"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:layout_weight="1.1"
+		    android:layout_weight="1"
 		    android:background="#7799dd"
 		    android:gravity="center|left"
 		    android:padding="5dp"
@@ -66,30 +66,12 @@
 		    android:id="@+id/txtGrau"
 		    android:layout_width="match_parent"
 		    android:layout_height="wrap_content"
-		    android:layout_weight="1.1"
+		    android:layout_weight="1"
 		    android:ems="10"
 		    android:nextFocusLeft="@id/txtNomVia" >
 
 		    <requestFocus />
 		</EditText>
-
-		<TextView
-		    android:id="@+id/lblTipus"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_weight="1.1"
-		    android:background="#7799dd"
-		    android:gravity="center|left"
-		    android:padding="5dp"
-		    android:text="Tipus"
-		    android:textSize="15sp" />
-
-		<EditText
-		    android:id="@+id/txtTipus"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_weight="0.7"
-		    android:ems="10" />
 
 	</LinearLayout>
 

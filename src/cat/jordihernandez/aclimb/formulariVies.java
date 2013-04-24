@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 
@@ -30,26 +32,30 @@ public class formulariVies extends Activity {
 	}
 
 	public void InserirDades (View view) {
-		EditText txtvia,txtgrau,txtTipus;
+		EditText txtvia,txtgrau;
 		RatingBar rating;
 		Spinner spOrientacio;
+		RadioGroup optTipus;
+		RadioButton tipus;
+		int TipusSel;
 		
 		
 		
 		txtvia = (EditText)this.findViewById(R.id.txtNomVia);
 		txtgrau = (EditText)this.findViewById(R.id.txtGrau);
 		rating = (RatingBar)this.findViewById(R.id.ratQualitat);
-		txtTipus = (EditText)this.findViewById(R.id.txtTipus);
+		optTipus = (RadioGroup)this.findViewById(R.id.rgrpEspClas);
 		spOrientacio = (Spinner)this.findViewById(R.id.cmbOrientacio);
-		//spOrientacio.setAdapter(new SpinnerOrientacioAdapter(this.getParent(), R.array.array_orientacio));
-		//ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.array_orientacio, R.layout.item_spinner_orientacio);
-		//spOrientacio.setAdapter(adapter);
-		
+				
 		manipularDadesVies dvies = new manipularDadesVies(this);
 		dvies.obrir();
 		// Agafar les dades dels widgets
 		item_vies via_nova = new item_vies(txtvia.getText().toString(),txtgrau.getText().toString(),(int)rating.getRating());
-		via_nova.setTipus(txtTipus.getText().toString());
+		
+		TipusSel = optTipus.getCheckedRadioButtonId();
+		tipus = (RadioButton)this.findViewById(TipusSel);
+		via_nova.setTipus(tipus.getText().toString());
+		
 		via_nova.setOrientacio(spOrientacio.getSelectedItem().toString());
 		
 		
