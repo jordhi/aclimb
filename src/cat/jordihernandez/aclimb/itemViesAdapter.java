@@ -51,7 +51,7 @@ public class itemViesAdapter extends BaseAdapter {
 	             
 	    item_vies item = items.get(position);
 	         
-	    //ImageView image = (ImageView) vi.findViewById(R.id.imagen);
+	    //ImageView image = (ImageView) vi.findViewById(R.id.imgSpinnerOri);
 	    //int imageResource = activity.getResources().getIdentifier(item.getRutaImagen(), null, activity.getPackageName());
 	    //image.setImageDrawable(activity.getResources().getDrawable(imageResource));
 	         

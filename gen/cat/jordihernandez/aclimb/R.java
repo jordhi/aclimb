@@ -45,7 +45,7 @@ public final class R {
         public static final int btnInserir=0x7f09000e;
         public static final int cmbOrientacio=0x7f09000c;
         public static final int esborrar_item=0x7f090015;
-        public static final int imageView1=0x7f090002;
+        public static final int imgSpinnerOri=0x7f090002;
         public static final int inserir_item=0x7f090014;
         public static final int lblGrau=0x7f090008;
         public static final int lblNovaVia=0x7f090003;
