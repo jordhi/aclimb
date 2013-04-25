@@ -14,8 +14,7 @@ public class manipularDadesVies {
 	
 	private SQLiteDatabase bdClimb;
 	private aClimbDBHelper dbHelper;
-	//private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-	//      MySQLiteHelper.COLUMN_COMMENT };
+	
 	
 	public manipularDadesVies(Context context) {
 		// TODO Auto-generated constructor stub
