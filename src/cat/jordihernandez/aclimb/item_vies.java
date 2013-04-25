@@ -2,12 +2,12 @@ package cat.jordihernandez.aclimb;
 
 public class item_vies {
 	
-	 protected String NomVia,Tipus,Orientacio;
+	 protected String NomVia,Tipus,Orientacio,Descens;
 	 protected String Grau;
 	 protected int idvia;
 	 protected int Rating;
 	 protected Boolean TopRope;
-	 
+		 
 
 	public item_vies() {
 		// TODO Auto-generated constructor stub
@@ -76,6 +76,14 @@ public class item_vies {
 	
 	public boolean getTopRope() {
 		return TopRope;
+	}
+	
+	public String getDescens() {
+		return Descens;
+	}
+	
+	public void setDescens(String des) {
+		this.Descens = des;
 	}
 		     
 }

@@ -40,6 +40,7 @@ public class manipularDadesVies {
 		    values.put(aClimbDB.T_Vies.COLUMN_TIPUS, via_nova.getTipus());
 		    values.put(aClimbDB.T_Vies.COLUMN_ORIENTACIO, via_nova.getOrientacio());
 		    values.put(aClimbDB.T_Vies.COLUMN_TOPROPE, via_nova.getTopRope());
+		    values.put(aClimbDB.T_Vies.COLUMN_DESCENS, via_nova.getDescens());
 		    
 		    //long insertId = bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null,values);
 		    bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null, values);

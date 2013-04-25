@@ -14,13 +14,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class formulariVies extends Activity {
-	EditText txtvia;
-	EditText txtDescens;
+	EditText txtvia,txtgrau,txtDescens;
 	Spinner spOrientacio;
 	RadioGroup optTipus;
 	RadioButton tipus;
 	TextView lblDescens;
 	int seleccioTipus;
+	RatingBar rating;
+	CheckBox TopRope;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,22 +66,12 @@ public class formulariVies extends Activity {
 	}
 
 	public void InserirDades (View view) {
-		EditText txtvia,txtgrau;
-		RatingBar rating;
-		Spinner spOrientacio;
-		RadioGroup optTipus;
-		RadioButton tipus;
-		CheckBox TopRope;
 			
 		
-		
-		txtvia = (EditText)this.findViewById(R.id.txtNomVia);
 		txtgrau = (EditText)this.findViewById(R.id.txtGrau);
 		rating = (RatingBar)this.findViewById(R.id.ratQualitat);
-		optTipus = (RadioGroup)this.findViewById(R.id.rgrpEspClas);
-		spOrientacio = (Spinner)this.findViewById(R.id.cmbOrientacio);
-		tipus = (RadioButton)this.findViewById(optTipus.getCheckedRadioButtonId());
 		TopRope = (CheckBox)this.findViewById(R.id.chkToprope);
+		
 				
 		manipularDadesVies dvies = new manipularDadesVies(this);
 		dvies.obrir();
@@ -89,6 +80,7 @@ public class formulariVies extends Activity {
 		via_nova.setTipus(tipus.getText().toString());
 		via_nova.setOrientacio(spOrientacio.getSelectedItem().toString());
 		via_nova.setTopRope(TopRope.isChecked());
+		via_nova.setDescens(txtDescens.getText().toString());
 		
 		
 		// Inserir a la base de dades i tancar
