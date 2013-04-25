@@ -4,31 +4,64 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class formulariVies extends Activity {
-
+	EditText txtvia;
+	EditText txtDescens;
+	Spinner spOrientacio;
+	RadioGroup optTipus;
+	RadioButton tipus;
+	TextView lblDescens;
+	int seleccioTipus;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.form_vies);
-		EditText txtvia;
-		Spinner spOrientacio;
-		
+				
 		//disseny del spinner
 		spOrientacio = (Spinner)this.findViewById(R.id.cmbOrientacio);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.array_orientacio, android.R.layout.simple_spinner_item);
 		spOrientacio.setAdapter(adapter);
+				
+		txtDescens = (EditText)this.findViewById(R.id.txtDescens);
+		lblDescens = (TextView)this.findViewById(R.id.lblDescens);
 		
 		//fem que entrar el nom de la via sigui en primer valor a entrar
 		txtvia = (EditText)this.findViewById(R.id.txtNomVia);
 		txtvia.requestFocus();
+		
+		//Si sel·leccionem via clàssica mostrem el camp descens
+		optTipus = (RadioGroup)this.findViewById(R.id.rgrpEspClas);
+		tipus = (RadioButton)this.findViewById(optTipus.getCheckedRadioButtonId());
+		seleccioTipus = optTipus.getCheckedRadioButtonId();
+		
+		optTipus.setOnCheckedChangeListener(new OnCheckedChangeListener(){
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
 				
+				 if (checkedId == R.id.radioEsp){
+			            txtDescens.setVisibility(View.GONE);
+			            lblDescens.setVisibility(View.GONE);
+			        }else if (checkedId == R.id.radioCla){
+			        	txtDescens.setVisibility(View.VISIBLE);
+			            lblDescens.setVisibility(View.VISIBLE);
+			        }
+			}
+			
+		});
 	}
 
 	public void InserirDades (View view) {
@@ -37,8 +70,8 @@ public class formulariVies extends Activity {
 		Spinner spOrientacio;
 		RadioGroup optTipus;
 		RadioButton tipus;
-		int TipusSel;
-		
+		CheckBox TopRope;
+			
 		
 		
 		txtvia = (EditText)this.findViewById(R.id.txtNomVia);
@@ -46,17 +79,16 @@ public class formulariVies extends Activity {
 		rating = (RatingBar)this.findViewById(R.id.ratQualitat);
 		optTipus = (RadioGroup)this.findViewById(R.id.rgrpEspClas);
 		spOrientacio = (Spinner)this.findViewById(R.id.cmbOrientacio);
+		tipus = (RadioButton)this.findViewById(optTipus.getCheckedRadioButtonId());
+		TopRope = (CheckBox)this.findViewById(R.id.chkToprope);
 				
 		manipularDadesVies dvies = new manipularDadesVies(this);
 		dvies.obrir();
 		// Agafar les dades dels widgets
 		item_vies via_nova = new item_vies(txtvia.getText().toString(),txtgrau.getText().toString(),(int)rating.getRating());
-		
-		TipusSel = optTipus.getCheckedRadioButtonId();
-		tipus = (RadioButton)this.findViewById(TipusSel);
 		via_nova.setTipus(tipus.getText().toString());
-		
 		via_nova.setOrientacio(spOrientacio.getSelectedItem().toString());
+		via_nova.setTopRope(TopRope.isChecked());
 		
 		
 		// Inserir a la base de dades i tancar

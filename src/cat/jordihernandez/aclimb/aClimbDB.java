@@ -31,8 +31,7 @@ public class aClimbDB {
 		public static final String COLUMN_NAME_NOM_VIA = "nom_via";
 		public static final String COLUMN_TIPUS = "tipus";
 		public static final String COLUMN_DATA_CREACIO = "data_creacio";
-		public static final String COLUMN_GRAU_ESP = "grau_esp";
-		public static final String COLUMN_GRAU_CL = "grau_cl";
+		public static final String COLUMN_GRAU = "grau";
 		public static final String COLUMN_TOPROPE = "toperope";
 		public static final String COLUMN_ORIENTACIO = "orientacio";
 		public static final String COLUMN_OBSERVACIONS = "observacions";

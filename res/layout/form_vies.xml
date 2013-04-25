@@ -33,20 +33,42 @@
  	   android:orientation="horizontal" >
 
 	    <RadioButton
-    	    android:id="@+id/radio0"
- 	        android:layout_width="match_parent"
-        	android:layout_height="wrap_content"
-        	android:layout_weight="1"
-        	android:checked="true"
-        	android:text="Esportiva" />
-	    <RadioButton
-    	    android:id="@+id/radio1"
-       		android:layout_width="match_parent"
-       		android:layout_height="wrap_content"
-        	android:layout_weight="1"
-        	android:text="Clàssica" />
-</RadioGroup>
+	        android:id="@+id/radioEsp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:checked="true"
+	        android:text="Esportiva" />
 
+	    <RadioButton
+	        android:id="@+id/radioCla"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="Clàssica" />
+
+	</RadioGroup>
+	
+	<TextView
+	    android:id="@+id/lblDescens"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="#7799dd"
+	    android:gravity="center|left"
+	    android:padding="5dp"
+	    android:text="Descens"
+	    android:textSize="15sp"
+	    android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/txtDescens"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:visibility="gone" >
+
+ 	</EditText>
+ 	
 	<LinearLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" >
@@ -68,10 +90,17 @@
 		    android:layout_height="wrap_content"
 		    android:layout_weight="1"
 		    android:ems="10"
-		    android:nextFocusLeft="@id/txtNomVia" >
+		    android:nextFocusLeft="@id/txtNomVia" />
 
-		    <requestFocus />
-		</EditText>
+		<CheckBox
+		    android:id="@+id/chkToprope"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="right"
+		    android:layout_weight="0.7"
+		    android:checked="false"
+		    android:gravity="right|center_vertical|center|start"
+		    android:text="Top rope?" />
 
 	</LinearLayout>
 

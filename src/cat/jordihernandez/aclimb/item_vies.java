@@ -6,6 +6,7 @@ public class item_vies {
 	 protected String Grau;
 	 protected int idvia;
 	 protected int Rating;
+	 protected Boolean TopRope;
 	 
 
 	public item_vies() {
@@ -68,5 +69,13 @@ public class item_vies {
 	public void setOrientacio(String ori) {
 		this.Orientacio = ori;
 	}		 
+	
+	public void setTopRope(boolean t) {
+		this.TopRope = t;
+	}
+	
+	public boolean getTopRope() {
+		return TopRope;
+	}
 		     
 }

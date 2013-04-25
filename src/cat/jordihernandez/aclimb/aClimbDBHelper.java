@@ -24,9 +24,8 @@ public class aClimbDBHelper extends SQLiteOpenHelper {
 			aClimbDB.T_Vies.COLUMN_NAME_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
 			aClimbDB.T_Vies.COLUMN_NAME_NOM_VIA + " VARCHAR," +
 			aClimbDB.T_Vies.COLUMN_TIPUS + " VARCHAR, " +
-			aClimbDB.T_Vies.COLUMN_DATA_CREACIO + " DATETIME," +
-			aClimbDB.T_Vies.COLUMN_GRAU_ESP + " VARCHAR," +
-			aClimbDB.T_Vies.COLUMN_GRAU_CL + " VARCHAR," + 
+			aClimbDB.T_Vies.COLUMN_DATA_CREACIO + " DATETIME DEFAULT(DATETIME('NOW'))," +
+			aClimbDB.T_Vies.COLUMN_GRAU + " VARCHAR," +
 			aClimbDB.T_Vies.COLUMN_TOPROPE + " BOOL," + 
 			aClimbDB.T_Vies.COLUMN_ORIENTACIO + " VARCHAR," +
 			aClimbDB.T_Vies.COLUMN_DESCENS + " VARCHAR," +

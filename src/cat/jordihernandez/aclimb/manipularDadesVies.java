@@ -35,10 +35,11 @@ public class manipularDadesVies {
 		    ContentValues values = new ContentValues();
 		    //values.put(aClimbDB.T_Vies.COLUMN_NAME_ID, via_nova.getId());
 		    values.put(aClimbDB.T_Vies.COLUMN_NAME_NOM_VIA, via_nova.getNomVia());
-		    values.put(aClimbDB.T_Vies.COLUMN_GRAU_ESP, via_nova.getGrau());
+		    values.put(aClimbDB.T_Vies.COLUMN_GRAU, via_nova.getGrau());
 		    values.put(aClimbDB.T_Vies.COLUMN_QUALITAT, via_nova.getRating());
 		    values.put(aClimbDB.T_Vies.COLUMN_TIPUS, via_nova.getTipus());
 		    values.put(aClimbDB.T_Vies.COLUMN_ORIENTACIO, via_nova.getOrientacio());
+		    values.put(aClimbDB.T_Vies.COLUMN_TOPROPE, via_nova.getTopRope());
 		    
 		    //long insertId = bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null,values);
 		    bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null, values);
@@ -78,7 +79,7 @@ public class manipularDadesVies {
 		    via.setId(cursor.getInt(0));
 		    via.setNomVia(cursor.getString(1));
 		    via.setGrau(cursor.getString(4));
-		    via.setRating(cursor.getInt(9));
+		    via.setRating(cursor.getInt(8));
 		    return via;
 	}
 
