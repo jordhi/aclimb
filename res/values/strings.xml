@@ -6,6 +6,7 @@
     <string name="inserir_item">Inserir</string>
 	<string name="esborrar_item">Esborrar</string>
 	<string name="editar_item">Editar</string>
+	<string name="compartir_item">Compartir</string>
 	
 	<string-array name="array_orientacio">
         <item>Nord</item>

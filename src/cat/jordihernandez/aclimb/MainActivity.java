@@ -3,9 +3,12 @@ package cat.jordihernandez.aclimb;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.TabHost;
 import android.widget.Toast;
  
@@ -78,9 +81,11 @@ public class MainActivity extends FragmentActivity {
         tSpecEscoles.setIndicator("Escoles",getResources().getDrawable(R.drawable.icon_escoles_tab));
         tSpecEscoles.setContent(new ContingutsTabHost(getBaseContext()));
         tHost.addTab(tSpecEscoles);
- 
+        
+        
+        
     }
-
+    
     /** Menu que es comú a tots els tabs **/
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -112,5 +117,6 @@ public class MainActivity extends FragmentActivity {
 		return super.onOptionsItemSelected(item);
 	}
     
+	
     
 }

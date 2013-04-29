@@ -45,6 +45,8 @@ public final class R {
         public static final int btnInserir=0x7f09000f;
         public static final int chkToprope=0x7f09000c;
         public static final int cmbOrientacio=0x7f09000d;
+        public static final int compartir_item=0x7f090018;
+        public static final int editar_item=0x7f090017;
         public static final int esborrar_item=0x7f090016;
         public static final int imgSpinnerOri=0x7f090002;
         public static final int inserir_item=0x7f090015;
@@ -70,10 +72,12 @@ public final class R {
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int mcont_vies=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int compartir_item=0x7f050005;
         public static final int editar_item=0x7f050004;
         public static final int esborrar_item=0x7f050003;
         public static final int inserir_item=0x7f050002;

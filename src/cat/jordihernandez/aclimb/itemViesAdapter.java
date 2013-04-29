@@ -64,6 +64,7 @@ public class itemViesAdapter extends BaseAdapter {
 	    RatingBar rating = (RatingBar) vi.findViewById(R.id.lblRatQualitat);
 	    rating.setRating((float)item.getRating());
 	    
+	       
 	    return vi;
 	}
 
