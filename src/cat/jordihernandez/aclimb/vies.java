@@ -12,20 +12,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.Toast;
 
-//AndroidFragment
 public class vies extends ListFragment {
 
 	/** An array of items to display in ArrayList */
     ArrayList<item_vies> llista_vies = new ArrayList<item_vies>();
     private manipularDadesVies dadesVies;
-    //itemViesAdapter vista_llista;
     
- 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-         
+    	ObtenirLlistaVies();
+    	
     	return super.onCreateView(inflater, container, savedInstanceState);
     }
 
@@ -34,7 +33,8 @@ public class vies extends ListFragment {
     	 /** Creating array adapter to set data in listview */
         dadesVies = new manipularDadesVies(this.getActivity());
     	dadesVies.obrir();
-    	ArrayList<item_vies> llista_vies = dadesVies.getAllVies();
+    	
+    	llista_vies = dadesVies.getAllVies();
     	itemViesAdapter adapter = new itemViesAdapter(this.getActivity(), llista_vies);
         
     	/** Setting the array adapter to the listview */
@@ -48,6 +48,7 @@ public class vies extends ListFragment {
 	public void onResume() {
 		// TODO Auto-generated method stub
 		ObtenirLlistaVies();
+		
 		super.onResume();
 	}
 
@@ -70,17 +71,26 @@ public class vies extends ListFragment {
 		
 		switch(item.getItemId()) {
 	    case R.id.esborrar_item:
-	    	toast.makeText(this.getActivity(), "esborrar", Toast.LENGTH_SHORT).show();
-	    	break;
+	    	
+	    	AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+	    		    	
+	    	dadesVies = new manipularDadesVies(this.getActivity());
+	    	dadesVies.obrir();
+	    	dadesVies.EsborrarVia(llista_vies.get(info.position).idvia);
+	    	dadesVies.tancar();
+	    	ObtenirLlistaVies();
+	    	return true;
+	    	
 	    case R.id.editar_item:
 	    	toast.makeText(this.getActivity(), "editar", Toast.LENGTH_SHORT).show();
-	        break;
+	        return true;
+	        
+	    default:
+	    	return super.onContextItemSelected(item);
+	    	
 	    }
-	    
-		
-		return super.onContextItemSelected(item);
+	
 	}
-
 	
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
@@ -89,7 +99,6 @@ public class vies extends ListFragment {
 		
 		registerForContextMenu(getListView());
 	}
-    
    
 
 }

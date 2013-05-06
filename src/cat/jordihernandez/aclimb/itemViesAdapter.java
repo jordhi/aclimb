@@ -56,7 +56,7 @@ public class itemViesAdapter extends BaseAdapter {
 	    //image.setImageDrawable(activity.getResources().getDrawable(imageResource));
 	         
 	    TextView nombre = (TextView) vi.findViewById(R.id.text1);
-	    nombre.setText(item.getNomVia());
+	    nombre.setText(item.getNomVia() + " id:" + item.getId());
 	         
 	    TextView tipo = (TextView) vi.findViewById(R.id.text2);
 	    tipo.setText(item.getGrau());
