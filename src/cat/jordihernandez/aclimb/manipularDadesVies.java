@@ -82,5 +82,39 @@ public class manipularDadesVies {
 		    via.setRating(cursor.getInt(8));
 		    return via;
 	}
+	 
+	public item_vies SeleccioVia(int id) {
+		item_vies viasel = new item_vies();
+		String condicio = aClimbDB.T_Vies.COLUMN_NAME_ID + "=" + id;
+		
+		System.out.println("Sel.leccio: " + condicio);
+		Cursor cursor = bdClimb.query(aClimbDB.T_Vies.TABLE_NAME,
+		        null , condicio, null, null, null, null);
+
+		cursor.moveToFirst();
+		viasel = cursorToVies(cursor);
+		viasel.setId(cursor.getInt(0));
+	    viasel.setNomVia(cursor.getString(1));
+	    viasel.setTipus(cursor.getString(2));
+	    viasel.setGrau(cursor.getString(4));
+	    viasel.setTopRope(IntToBool(cursor.getInt(5)));
+	    viasel.setOrientacio(cursor.getString(6));
+	    viasel.setDescens(cursor.getString(7));
+	    viasel.setRating(cursor.getInt(8));
+	    
+//		while (!cursor.isAfterLast()) {
+//		      item_vies via = cursorToVies(cursor);
+//		      vies.add(via);
+//		      cursor.moveToNext();
+//		 }
+		    // Make sure to close the cursor
+		    cursor.close();
+		return viasel;
+	}
+	
+	public boolean IntToBool(int b) {
+	    if(b != 0) return true;
+	    else return false;
+	}
 
 }

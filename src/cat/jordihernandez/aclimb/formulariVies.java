@@ -30,6 +30,11 @@ public class formulariVies extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.form_vies);
 				
+		
+		txtgrau = (EditText)this.findViewById(R.id.txtGrau);
+		rating = (RatingBar)this.findViewById(R.id.ratQualitat);
+		TopRope = (CheckBox)this.findViewById(R.id.chkToprope);
+		
 		//disseny del spinner
 		spOrientacio = (Spinner)this.findViewById(R.id.cmbOrientacio);
 		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.array_orientacio, android.R.layout.simple_spinner_item);
@@ -59,6 +64,7 @@ public class formulariVies extends Activity {
 			        }else if (checkedId == R.id.radioCla){
 			        	txtDescens.setVisibility(View.VISIBLE);
 			            lblDescens.setVisibility(View.VISIBLE);
+			            tipus = (RadioButton)findViewById(optTipus.getCheckedRadioButtonId());
 			        }
 			}
 			
@@ -67,13 +73,8 @@ public class formulariVies extends Activity {
 
 	public void InserirDades (View view) {
 			
-		
-		txtgrau = (EditText)this.findViewById(R.id.txtGrau);
-		rating = (RatingBar)this.findViewById(R.id.ratQualitat);
-		TopRope = (CheckBox)this.findViewById(R.id.chkToprope);
-		
-				
 		manipularDadesVies dvies = new manipularDadesVies(this);
+		
 		dvies.obrir();
 		// Agafar les dades dels widgets
 		item_vies via_nova = new item_vies(txtvia.getText().toString(),txtgrau.getText().toString(),(int)rating.getRating());

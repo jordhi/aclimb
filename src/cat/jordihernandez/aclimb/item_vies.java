@@ -6,7 +6,7 @@ public class item_vies {
 	 protected String Grau;
 	 protected int idvia;
 	 protected int Rating;
-	 protected Boolean TopRope;
+	 protected boolean TopRope;
 		 
 
 	public item_vies() {
@@ -14,6 +14,11 @@ public class item_vies {
 		this.Grau="";
 		this.NomVia="";
 		this.Rating=0;
+		this.Tipus="";
+		this.TopRope=false;
+		this.Orientacio="";
+		this.Descens="";
+		
 	}
 	
 	public item_vies(String nom, String grau, int rat) {
