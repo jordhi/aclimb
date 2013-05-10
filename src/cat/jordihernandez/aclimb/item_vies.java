@@ -67,8 +67,22 @@ public class item_vies {
 		this.Tipus = tip;
 	}		 
 	
-	public String getOrientacio() {
+	public String getOrientacio(){
 		return Orientacio;
+	}
+	
+	public int getIdOrientacio() {
+		
+		if (Orientacio.equalsIgnoreCase("Nord")) return aClimbDB.COORD.NORD;
+		else if (Orientacio.equalsIgnoreCase("Nord-Oest")) return aClimbDB.COORD.NORDOEST;
+		else if (Orientacio.equalsIgnoreCase("Nord-Est")) return aClimbDB.COORD.NORDEST;
+		else if (Orientacio.equalsIgnoreCase("Sud")) return aClimbDB.COORD.SUD;
+		else if (Orientacio.equalsIgnoreCase("Sud-Oest")) return aClimbDB.COORD.SUDOEST;
+		else if (Orientacio.equalsIgnoreCase("Sud-Est")) return aClimbDB.COORD.SUDEST;
+		else if (Orientacio.equalsIgnoreCase("Est")) return aClimbDB.COORD.EST;
+		else if (Orientacio.equalsIgnoreCase("Oest")) return aClimbDB.COORD.OEST;
+		else return -1;
+		
 	}
 	
 	public void setOrientacio(String ori) {

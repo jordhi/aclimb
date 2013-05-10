@@ -6,7 +6,18 @@ public class aClimbDB {
 	
 	//constructor per evitar instaciar la classe
 	private aClimbDB() {}
-
+	public static abstract class COORD implements BaseColumns {
+		public static final int NORD = 0;
+		public static final int NORDOEST = 1;
+		public static final int NORDEST = 2;
+		public static final int SUD = 3;
+		public static final int SUDOEST = 4;
+		public static final int SUDEST = 5;
+		public static final int EST = 6;
+		public static final int OEST = 7;
+		
+	}
+	
 	//Taula de SECTOR
 	public static abstract class T_Sectors implements BaseColumns {
 		public static final String TABLE_NAME = "sectors";

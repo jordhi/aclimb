@@ -17,9 +17,8 @@ public class formulariVies extends Activity {
 	EditText txtvia,txtgrau,txtDescens;
 	Spinner spOrientacio;
 	RadioGroup optTipus;
-	RadioButton tipus;
+	RadioButton tipus,tipusEsp,tipusClas;
 	TextView lblDescens;
-	int seleccioTipus;
 	RatingBar rating;
 	CheckBox TopRope;
 	
@@ -50,7 +49,8 @@ public class formulariVies extends Activity {
 		//Si sel·leccionem via clàssica mostrem el camp descens
 		optTipus = (RadioGroup)this.findViewById(R.id.rgrpEspClas);
 		tipus = (RadioButton)this.findViewById(optTipus.getCheckedRadioButtonId());
-		seleccioTipus = optTipus.getCheckedRadioButtonId();
+		tipusEsp = (RadioButton)this.findViewById(R.id.radioEsp);
+		tipusClas = (RadioButton)this.findViewById(R.id.radioCla);
 		
 		optTipus.setOnCheckedChangeListener(new OnCheckedChangeListener(){
 
@@ -64,8 +64,8 @@ public class formulariVies extends Activity {
 			        }else if (checkedId == R.id.radioCla){
 			        	txtDescens.setVisibility(View.VISIBLE);
 			            lblDescens.setVisibility(View.VISIBLE);
-			            tipus = (RadioButton)findViewById(optTipus.getCheckedRadioButtonId());
-			        }
+			       }
+				 tipus = (RadioButton)findViewById(optTipus.getCheckedRadioButtonId());
 			}
 			
 		});

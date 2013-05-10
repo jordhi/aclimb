@@ -2,6 +2,7 @@ package cat.jordihernandez.aclimb;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class formulariEditarVies extends formulariVies {
 	int idvia;
@@ -22,20 +23,19 @@ public class formulariEditarVies extends formulariVies {
 		via = dvies.SeleccioVia(idvia);
 		this.txtvia.setText(via.getNomVia());
 		this.txtgrau.setText(via.getGrau());
-		//this.spOrientacio.
+		
 		String stipus = via.getTipus().toString();
 		if(stipus.equalsIgnoreCase("Clàssica")) {
 			//Mostrar camp Descens si la via és clàssica
 			this.txtDescens.setVisibility(View.VISIBLE);
             this.lblDescens.setVisibility(View.VISIBLE);
             this.txtDescens.setText(via.getDescens());
+            this.tipusClas.setChecked(true);
 		}
 		this.TopRope.setChecked(via.getTopRope());
 		this.rating.setRating(via.getRating());
+		this.spOrientacio.setSelection(via.getIdOrientacio());
 		
-		//FALTEN AQUESTS DOS
-		this.spOrientacio.setSelection(3);
-		this.tipus.setChecked(true);
 		
 		dvies.tancar();
 	    
@@ -46,7 +46,13 @@ public class formulariEditarVies extends formulariVies {
 	@Override
 	public void InserirDades(View view) {
 		// TODO Auto-generated method stub
-		super.InserirDades(view);
+		
+		//super.InserirDades(view);
+		Toast t = Toast.makeText(getApplicationContext(),
+                "Modificat", Toast.LENGTH_SHORT);
+
+        t.show();
+		
 	}
 	
 }
