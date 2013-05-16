@@ -48,10 +48,27 @@ public class formulariEditarVies extends formulariVies {
 		// TODO Auto-generated method stub
 		
 		//super.InserirDades(view);
-		Toast t = Toast.makeText(getApplicationContext(),
+		/*Toast t = Toast.makeText(getApplicationContext(),
                 "Modificat", Toast.LENGTH_SHORT);
 
-        t.show();
+        t.show();*/
+		manipularDadesVies dvies = new manipularDadesVies(this);
+		
+		dvies.obrir();
+		// Agafar les dades dels widgets
+		item_vies via_nova = new item_vies(txtvia.getText().toString(),txtgrau.getText().toString(),(int)rating.getRating());
+		via_nova.setTipus(tipus.getText().toString());
+		via_nova.setOrientacio(spOrientacio.getSelectedItem().toString());
+		via_nova.setTopRope(TopRope.isChecked());
+		via_nova.setDescens(txtDescens.getText().toString());
+		
+		
+		// Inserir a la base de dades i tancar
+		dvies.inserirVia(idvia,via_nova);
+		dvies.tancar();
+		
+		finish();
+		
 		
 	}
 	

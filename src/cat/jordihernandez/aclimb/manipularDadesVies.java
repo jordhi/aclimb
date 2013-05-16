@@ -30,19 +30,34 @@ public class manipularDadesVies {
 	    dbHelper.close();
 	}
 	
+	private ContentValues getValors(item_vies via_nova) {
+		ContentValues values = new ContentValues();
+		
+		values.put(aClimbDB.T_Vies.COLUMN_NAME_NOM_VIA, via_nova.getNomVia());
+	    values.put(aClimbDB.T_Vies.COLUMN_GRAU, via_nova.getGrau());
+	    values.put(aClimbDB.T_Vies.COLUMN_QUALITAT, via_nova.getRating());
+	    values.put(aClimbDB.T_Vies.COLUMN_TIPUS, via_nova.getTipus());
+	    values.put(aClimbDB.T_Vies.COLUMN_ORIENTACIO, via_nova.getOrientacio());
+	    values.put(aClimbDB.T_Vies.COLUMN_TOPROPE, via_nova.getTopRope());
+	    values.put(aClimbDB.T_Vies.COLUMN_DESCENS, via_nova.getDescens());
+		
+		return values;
+	}
+	
+	public void inserirVia(int id, item_vies via_nova) {
+		ContentValues values = new ContentValues();
+	     
+	    values = getValors(via_nova);
+	    values.put(aClimbDB.T_Vies.COLUMN_NAME_ID, id);
+	    bdClimb.replace(aClimbDB.T_Vies.TABLE_NAME, null, values);
+	}
+	
 	public void inserirVia(item_vies via_nova) {
 		    ContentValues values = new ContentValues();
-		    //values.put(aClimbDB.T_Vies.COLUMN_NAME_ID, via_nova.getId());
-		    values.put(aClimbDB.T_Vies.COLUMN_NAME_NOM_VIA, via_nova.getNomVia());
-		    values.put(aClimbDB.T_Vies.COLUMN_GRAU, via_nova.getGrau());
-		    values.put(aClimbDB.T_Vies.COLUMN_QUALITAT, via_nova.getRating());
-		    values.put(aClimbDB.T_Vies.COLUMN_TIPUS, via_nova.getTipus());
-		    values.put(aClimbDB.T_Vies.COLUMN_ORIENTACIO, via_nova.getOrientacio());
-		    values.put(aClimbDB.T_Vies.COLUMN_TOPROPE, via_nova.getTopRope());
-		    values.put(aClimbDB.T_Vies.COLUMN_DESCENS, via_nova.getDescens());
-		    
-		    //long insertId = bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null,values);
+		    		    
+		    values = getValors(via_nova);
 		    bdClimb.insert(aClimbDB.T_Vies.TABLE_NAME, null, values);
+		   		    
 		   /* Cursor cursor = bdClimb.query(aClimbDB.T_Vies.TABLE_NAME,
 		        null, aClimbDB.T_Vies.COLUMN_NAME_ID + " = " + insertId, null,
 		        null, null, null);
