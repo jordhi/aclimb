@@ -1,5 +1,7 @@
 package cat.jordihernandez.aclimb;
 
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -11,6 +13,10 @@ import android.widget.ListView;
 //AppleFragment
 public class escoles extends ListFragment {
 
+	
+	 ArrayList<item_escoles> llista_vies = new ArrayList<item_escoles>();
+	// private manipularDadesEscoles dadesEscoles;
+	 
 	 /** An array of items to display in ArrayList */
     String llista_escoles[] = new String[]{
         "Sadernes",

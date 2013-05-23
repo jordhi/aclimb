@@ -47,11 +47,6 @@ public class formulariEditarVies extends formulariVies {
 	public void InserirDades(View view) {
 		// TODO Auto-generated method stub
 		
-		//super.InserirDades(view);
-		/*Toast t = Toast.makeText(getApplicationContext(),
-                "Modificat", Toast.LENGTH_SHORT);
-
-        t.show();*/
 		manipularDadesVies dvies = new manipularDadesVies(this);
 		
 		dvies.obrir();
@@ -61,9 +56,8 @@ public class formulariEditarVies extends formulariVies {
 		via_nova.setOrientacio(spOrientacio.getSelectedItem().toString());
 		via_nova.setTopRope(TopRope.isChecked());
 		via_nova.setDescens(txtDescens.getText().toString());
-		
-		
-		// Inserir a la base de dades i tancar
+				
+		// Modificar a la base de dades i tancar idvia: via a modificar
 		dvies.inserirVia(idvia,via_nova);
 		dvies.tancar();
 		
