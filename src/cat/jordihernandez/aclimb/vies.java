@@ -14,6 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+<<<<<<< HEAD
+=======
+import android.widget.Toast;
+>>>>>>> 928dbe4adf1c96b187b39e49c0051ab8ef3695a8
 
 public class vies extends ListFragment {
 
@@ -63,7 +67,11 @@ public class vies extends ListFragment {
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		//Toast toast = new Toast(this.getActivity());
+=======
+		Toast toast = new Toast(this.getActivity());
+>>>>>>> 928dbe4adf1c96b187b39e49c0051ab8ef3695a8
 		
 		switch(item.getItemId()) {
 	    case R.id.esborrar_item:

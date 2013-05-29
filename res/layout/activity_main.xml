@@ -24,16 +24,24 @@
                 <LinearLayout
                     android:id="@+id/tabVies"
                     android:layout_width="match_parent"
+<<<<<<< HEAD
                     android:layout_height="match_parent"
                     android:orientation="vertical" >
+=======
+                    android:layout_height="match_parent" >
+>>>>>>> 928dbe4adf1c96b187b39e49c0051ab8ef3695a8
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/TabEscoles"
                     android:layout_width="match_parent"
+<<<<<<< HEAD
                     android:layout_height="match_parent" 
                     android:orientation="vertical">
+=======
+                    android:layout_height="match_parent" >
+>>>>>>> 928dbe4adf1c96b187b39e49c0051ab8ef3695a8
                 </LinearLayout>
 
                 

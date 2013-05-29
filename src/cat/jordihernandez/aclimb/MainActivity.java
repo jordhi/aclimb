@@ -101,6 +101,7 @@ public class MainActivity extends FragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		Toast toast = new Toast(this);
+<<<<<<< HEAD
 		Intent i = new Intent();	
 		switch (item.getItemId()) {
 			case R.id.inserir_item:
@@ -109,6 +110,12 @@ public class MainActivity extends FragmentActivity {
 					case 0:  i = new Intent(this, formulariVies.class ); break;
 					case 1:  i = new Intent(this, formulariEscoles.class ); break;
 				}
+=======
+				
+		switch (item.getItemId()) {
+			case R.id.inserir_item:
+				Intent i = new Intent(this, formulariVies.class );
+>>>>>>> 928dbe4adf1c96b187b39e49c0051ab8ef3695a8
 		        startActivity(i);
 				break;
 			case R.id.esborrar_item:
